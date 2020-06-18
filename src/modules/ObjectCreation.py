@@ -1,29 +1,28 @@
 #This is where we will create the object creation for use
 # ALOT of our customization and procedural generation work will be done here
 # Importing required class modules - it's important we always only import WHAT WE NEED.
-import classes #<-- This will need to be changed to the multiple modules that we separate out. 
-from classes import PlayerClass
+import PlayerClass as PC #<-- This will need to be changed to the multiple modules that we separate out.
 #<-- importing Player class
 #Test monster creation - rough dev testing only - to be used in BattleComponent.py
 def createTestMonster():
     print("Would you like to create a 1.Wolf\n2.Salamander\n3.Ogre\n4.Golem")
-    monsterChoice = ""
+    monsterChoice = input()
     if monsterChoice == "1":
-        monster = Monster("Wolf", "Small", "None", 10, 5)
+        monster = PC.Monster("Wolf", "Small", "None", 10, 5)
         return monster
     elif monsterChoice == "2":
-        monster = Monster("Salamander", "Medium", "None", 30, 10)
+        monster = PC.Monster("Salamander", "Medium", "None", 30, 10)
         return monster
     elif monsterChoice == "3":
-        monster = Monster("Ogre", "Large", "None", 50, 20)
+        monster = PC.Monster("Ogre", "Large", "None", 50, 20)
         return monster
     elif monsterChoice == "4":
-        monster = Monster("Golem", "Collosus", "None", 100, 35)
+        monster = PC.Monster("Golem", "Collosus", "None", 100, 35)
         return monster
 
 #Creating a dev test player
 def createTestPlayer():
-    testPlayer = Player("test", 0, 0, None, None, None, None, None, 0, 0, None, None)
+    testPlayer = PC.Player("test", 0, 0, None, None, None, None, None, 0, 0, None, None)
     print("What level would you like to be?")
     testPlayer.level = int(input())
     #Run level/hp calculation 
@@ -35,7 +34,7 @@ def createTestPlayer():
         testPlayer.goalXP = testPlayer.goalXP - 1
     #player weapon selection
     print("Weapon? 1.Great Axe\n2.Great Sword\n3.Great Spear")
-    testPlayer.weapon = createTestweapon()
+    #testPlayer.weapon = createTestweapon()
     #print("Skipping Aura...")
     
 

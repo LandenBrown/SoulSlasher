@@ -8,7 +8,9 @@ def BattleMenu():
     print("This is coming soon...")
 
 def TestBattleSequence():
-    testMonster = createTestMonster()
+    testMonster = ObjectCreation.createTestMonster()
     print(testMonster.name)
     print(testMonster.size)
     print(str(testMonster.hp))
+
+TestBattleSequence()
