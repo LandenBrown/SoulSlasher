@@ -1,5 +1,5 @@
 class Player:
-    def __init__(self, name, hp, maxHP, weapon, armor, aura, monsters, inventory, currentXP, goalXP, area):
+    def __init__(self, name, hp, maxHP, weapon, armor, aura, monsters, inventory, currentXP, goalXP, area, level):
         self.name = name
         self.hp = hp
         self.maxhp = maxHP
@@ -11,6 +11,13 @@ class Player:
         self.currentXP = currentXP
         self.goalXP = goalXP
         self.area = area
+        self.level = level
+
+    #need to finish for next 10 or so levels
+    def levelCheck(self):
+        if self.level == 1:
+            self.maxHP = 30
+            self.goalXP = 10
 
         #level -> HP calculation 
         #level -> goalXP calculation
@@ -22,6 +29,7 @@ class Monster:
         self.element = element
         self.hp = hp
         self.xpReward = xpReward
+        #monster levels
 
 class Weapon:
     def __init__(self, name, Type, damage, element):
@@ -44,6 +52,6 @@ class Aura:
         self.attackBonus = attackBonus
 
 class Element:
-    def __init__(self, name, type):
+    def __init__(self, name, Type):
         self.name = name 
-        self.type = type         
+        self.Type = Type         

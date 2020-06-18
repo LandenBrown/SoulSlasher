@@ -1,8 +1,9 @@
 #This is where we will create the object creation for use
 # ALOT of our customization and procedural generation work will be done here
 # Importing required class modules - it's important we always only import WHAT WE NEED.
-from .PlayerClass import Monster #<-- This will need to be changed to the multiple modules that we separate out. 
-from .PlayerClass import Player #<-- importing Player class
+import classes #<-- This will need to be changed to the multiple modules that we separate out. 
+from classes import PlayerClass
+#<-- importing Player class
 #Test monster creation - rough dev testing only - to be used in BattleComponent.py
 def createTestMonster():
     print("Would you like to create a 1.Wolf\n2.Salamander\n3.Ogre\n4.Golem")
@@ -19,18 +20,33 @@ def createTestMonster():
     elif monsterChoice == "4":
         monster = Monster("Golem", "Collosus", "None", 100, 35)
         return monster
+
+#Creating a dev test player
 def createTestPlayer():
+    testPlayer = Player("test", 0, 0, None, None, None, None, None, 0, 0, None, None)
     print("What level would you like to be?")
-    playerLevel = input()
-    #Run level/hp calculation
+    testPlayer.level = int(input())
+    #Run level/hp calculation 
+    testPlayer.levelCheck()
+    #Testing level up functionality
     print("Would you like to be close to leveling? 1.no\n2.yes")
     closeToLevel = input()
+    if closeToLevel == "2":
+        testPlayer.goalXP = testPlayer.goalXP - 1
+    #player weapon selection
     print("Weapon? 1.Great Axe\n2.Great Sword\n3.Great Spear")
-    playerWeapon = input()
+    testPlayer.weapon = createTestweapon()
     #print("Skipping Aura...")
+    
 
-
-
-
-#Creating Static Player
+#Creating dev test weapons
+def createTestweapon():
+    weaponchoice = ""
+    #(name, type, damage, element)
+    if weaponchoice == "1":
+        weapon = weapon("Great Axe", "Axe", 10, "none")
+    if weaponchoice == "2":
+        weapon = weapon("Great Sword", "Sword", 10, "none") 
+    if weaponchoice == "3":
+        weapon = weapon("Great Spear", "Spear", 10, "none")
 
