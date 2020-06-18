@@ -8,3 +8,71 @@ What is soul slasher?
     a. In "Breeding" or "SOUL SLASHING" the player will be able to combine the souls of different monsters to 
     create new monsters as well as disolve monsters with magic to get parts for gear
 4. We should have procedural missions/dungeons/dark towers in which the player can gather/capture these things
+
+
+
+BEAST TYPES AND SIZES:
+    1. TYPES (NEED TO BRAINSTORM EFFECTS):
+        1. Enraged
+        2. Feral
+        4. Agile
+        5. Phantomized
+        6. Impenetrable
+    2. SIZES (NEED TO BRAINSTORM EFFECTS):
+        1. Small
+        2. Medium
+        3. Large
+        4. Colossus
+
+
+CRAFTING:
+    GEAR:
+        1. Weapons
+            a. Two Handed Axe
+                a. Bonuses:
+                    i. +1 attack to Medium/Large sized beasts
+                    ii. +1 attack to Enraged and Feral beasts
+            b. Two Handed Sword
+                a. Bonuses:
+                    i. +1 attack to Small/Medium sized beasts
+                    ii. +1 attack to Agile or Phantomized beasts 
+            c. Two Handed Spear
+                a. Bonuses:
+                    i. +1 attack to Large/Colossus sized beasts
+                    ii. +1 attack to Impenetrable beasts 
+        2. Armor
+            1. NEED SOME BRAINSTORMING HERE 
+        3. Divine Essence - Essentially an AURA around the player that can be upgraded that gives certain buffs
+            a. Demonic Consumption
+                i. Bonuses to be determined
+            b. Holy Incarnation
+                i. Bonuses to be determined
+            c. Ward of Elements
+                i. Bonuses to be determined  
+            d. ENTER CRAFTING/UGPRADING THOUGHTS HERE
+    MONSTERS:
+        1. NEED SOME SERIOUS BRAINTSTORMING
+        2. THOUGHTS 
+            A. SHOULD TAKE PLACE AT A SPECIFIC FORGE/MYSTIC ORB
+                1. Could have different levels of power, forcing you to venture forth to find better forges 
+                to forge better items/monsters.
+                2. 
+    
+
+    
+
+
+
+
+
+
+
+
+
+ITEMS FOR THE TEAM:
+1. Install Txt Syntax (VSCode addon that makes managing txt files easier)
+2. Install Github Desktop, clone repository, make a test branch for new content that is being worked.
+    a. https://desktop.github.com/
+    b. Clone github repo https://github.com/LandenBrown/SoulSlasher/
+ 
+ cosmicfog20@gmail.com
