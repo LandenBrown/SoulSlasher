@@ -8,6 +8,7 @@ What is soul slasher?
     a. In "Breeding" or "SOUL SLASHING" the player will be able to combine the souls of different monsters to 
     create new monsters as well as disolve monsters with magic to get parts for gear
 4. We should have procedural missions/dungeons/dark towers in which the player can gather/capture these things
+5. Story creation - BRAINSTORM
 
 
 
@@ -16,7 +17,7 @@ BEAST TYPES AND SIZES:
         1. Enraged
         2. Feral
         4. Agile
-        5. Phantomized
+        5. Phantomized - ?
         6. Impenetrable
     2. SIZES (NEED TO BRAINSTORM EFFECTS):
         1. Small
@@ -24,9 +25,11 @@ BEAST TYPES AND SIZES:
         3. Large
         4. Colossus
 
+ELEMENTS:
+    1. DUNNO
 
 CRAFTING:
-    GEAR:
+    GEAR ENCHANTS IN FUTURE:
         1. Weapons
             a. Two Handed Axe
                 a. Bonuses:
@@ -53,8 +56,8 @@ CRAFTING:
     MONSTERS:
         1. NEED SOME SERIOUS BRAINTSTORMING
         2. THOUGHTS 
-            A. SHOULD TAKE PLACE AT A SPECIFIC FORGE/MYSTIC ORB
-                1. Could have different levels of power, forcing you to venture forth to find better forges 
+            A. SHOULD TAKE PLACE AT A SPECIFIC FORGE/MYSTIC ORB/WELL/RIFT
+                1. RIFT Could have different levels of power, forcing you to venture forth to find better forges 
                 to forge better items/monsters.
                 2. 
     
@@ -62,6 +65,20 @@ CRAFTING:
     
 
 
+
+CODING TASKS:
+1. CLASSES
+    A. Player - (Name, hp, maxHP, weapon, armor, aura, monsters, inventory, currentXP, goalXP, area)
+    B. Weapon - (Name, Type, Damage, Element)
+    C. Monster - (Name, Size, Element, HP, xpReward)
+        a. Monster Type Class
+    D. Armor (Name, defense, Element)
+    E. Aura / Essence (Name, hpBonus, defenseBonus, attackBonus) - Monster bonuses, elemental bonuses 
+    F. Element Class (Name, Type) - need to brainstorm how bonuses will work
+2. Engine
+    a. Main Menu (Start Game, Load Game, Exit)
+        i. Start Game - Main Engine (Test Battle, Test Craft, Test Shop, Exit) Adventure, Inn, Mystic forge, etc 
+            1. Test battle start, let you choose monster to fight, and run simulation. 
 
 
 
