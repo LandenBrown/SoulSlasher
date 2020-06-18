@@ -1,0 +1,10 @@
+What is soul slasher?
+
+1. RPG dedicated to capturing feral beasts.
+    a. Demonkind, Normalkind, Elemental, etc
+2. There will be a pokemon style combat, using pets to drive battle
+    a. The player will also fight in combat as well with his own gear.
+3. The game will revolve around crafing weapons AND monsters
+    a. In "Breeding" or "SOUL SLASHING" the player will be able to combine the souls of different monsters to 
+    create new monsters as well as disolve monsters with magic to get parts for gear
+4. We should have procedural missions/dungeons/dark towers in which the player can gather/capture these things
