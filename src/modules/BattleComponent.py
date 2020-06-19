@@ -8,9 +8,23 @@ def BattleMenu():
     print("This is coming soon...")
 
 def TestBattleSequence():
+    #Generating Monster
     testMonster = ObjectCreation.createTestMonster()
-    print(testMonster.name)
-    print(testMonster.size)
-    print(str(testMonster.hp))
+    print("\nMonster Attributes:")
+    print("Monster: " + testMonster.name)
+    print("Size: " + testMonster.size)
+    print("HP: " + str(testMonster.hp))
+    
+    #Generate Player
+    testPlayer = ObjectCreation.createTestPlayer()
+
+    #Printing out player attributes
+    print("Level: "+str(testPlayer.level))
+    print("HP: "+str(testPlayer.hp)+"/"+str(testPlayer.maxHp))
+    print("Weapon: "+testPlayer.weapon.name+" / Damage: "+str(testPlayer.weapon.damage))
+    print("Experience: " +str(testPlayer.currentXp)+"/"+str(testPlayer.goalXp))
+
+    
+
 
 TestBattleSequence()

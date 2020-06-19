@@ -1,42 +1,59 @@
+import time
 class Player:
-    def __init__(self, name, hp, maxHP, weapon, armor, aura, monsters, inventory, currentXP, goalXP, area, level):
+    def __init__(self, name, hp, baseMaxHp, maxHp, weapon, armor, aura, monsters, inventory, currentXp, goalXp, area, level):
         self.name = name
         self.hp = hp
-        self.maxhp = maxHP
+        self.maxHp = maxHp
+        self.baseMaxHp = baseMaxHp
         self.weapon = weapon
         self.armor = armor
         self.aura = aura
         self.monsters = monsters
         self.inventory = inventory
-        self.currentXP = currentXP
-        self.goalXP = goalXP
+        self.currentXp = currentXp
+        self.goalXp = goalXp
         self.area = area
         self.level = level
 
-    #need to finish for next 10 or so levels
+
+    #need to create a MaxHP check to check for all item bonuses - THIS WILL NEED WORK AS WE CREATE ELEMENTS, ETC
+    def checkBonuses(self):
+        #the values in here are placeholders and this function will 100% fail if ran in current state. DO NOT USE YET.
+        #self.maxHp = self.baseMaxHp + (self.aura.hpBonus + self.armor.hpBonus)
+        self.maxHp = self.baseMaxHp
+        #healing health back to full after check
+        self.hp = self.maxHp
+
+    #should work for all levels, no need to draw it out for each level. This means that there is no level cap
     def levelCheck(self):
-        if self.level == 1:
-            self.maxHP = 30
-            self.goalXP = 10
+        print("Starting level check...")
+        time.sleep(0.5)
+        if self.currentXp >= self.goalXp:
+            self.goalXp = int(self.goalXp*1.15)
+            self.baseMaxHp = int(self.baseMaxHp*1.35)
+            self.level += 1
+            self.currentXp = 0
+            self.checkBonuses()
+
 
         #level -> HP calculation 
         #level -> goalXP calculation
 
 class Monster:
-    def __init__(self, name, size, element, hp, xpReward):
+    def __init__(self, name, size, element, hp, xpReward, level):
         self.name = name
         self.size = size
         self.element = element
         self.hp = hp
         self.xpReward = xpReward
-        #monster levels
+        self.level = level
 
 class Weapon:
-    def __init__(self, name, Type, damage, element):
+    def __init__(self, name, weaponType, damage, element):
         self.name = name
-        self.Type = Type
+        self.weaponType = weaponType
         self.damage = damage
-        self. element = element
+        self.element = element
 
 class Armor:
     def __init__(self, name, defense, element):    
@@ -52,6 +69,6 @@ class Aura:
         self.attackBonus = attackBonus
 
 class Element:
-    def __init__(self, name, Type):
+    def __init__(self, name, elementType):
         self.name = name 
-        self.Type = Type         
+        self.elementType = elementType         
