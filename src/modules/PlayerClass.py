@@ -40,13 +40,14 @@ class Player:
         #level -> goalXP calculation
 
 class Monster:
-    def __init__(self, name, size, element, hp, xpReward, level):
+    def __init__(self, name, size, element, hp, xpReward, level, dropTable):
         self.name = name
         self.size = size
         self.element = element
         self.hp = hp
         self.xpReward = xpReward
         self.level = level
+        self.dropTable = dropTable
 
 class Weapon:
     def __init__(self, name, weaponType, damage, element):
@@ -71,4 +72,17 @@ class Aura:
 class Element:
     def __init__(self, name, elementType):
         self.name = name 
-        self.elementType = elementType         
+        self.elementType = elementType    
+
+class Loot_Item:
+    def __init__(self, name, lootType, price)
+        self.name = name
+        self.lootType = lootType
+        self.price = price
+        
+    
+    
+    
+    #name, type, price
+    #
+    #BS DONT USE - random 100 - <80 common OR <50 rare <20 legendary

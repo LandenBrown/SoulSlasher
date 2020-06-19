@@ -49,11 +49,16 @@ def createTestweapon():
     weaponchoice = input()
     #(name, type, damage, element)
     if weaponchoice == "1":
-        weapon = PlayerClass.Weapon("Great Axe", "Axe", 10, "none")
+        weapon = PlayerClass.Weapon("Great Axe", "Axe", 10, "none", None)
         return weapon   
     if weaponchoice == "2":
-        weapon = PlayerClass.Weapon("Great Sword", "Sword", 10, "none") 
+        weapon = PlayerClass.Weapon("Great Sword", "Sword", 10, "none", None) 
         return weapon
     if weaponchoice == "3":
-        weapon = PlayerClass.Weapon("Great Spear", "Spear", 10, "none")
+        weapon = PlayerClass.Weapon("Great Spear", "Spear", 10, "none", None)
         return weapon
+
+
+
+#Create dropped item from mob - createDroppedItem()
+#When a mob is killed we will create and return an object
