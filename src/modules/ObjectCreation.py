@@ -23,6 +23,12 @@ def createTestMonster():
 #Creating a dev test player
 def createTestPlayer():
     testPlayer = PlayerClass.Player("test", 10, 10, 10, None, None, None, None, None, 0, 10, None, 1)
+    testPlayer.armor = createTestArmor() #create player's armor
+    testPlayer.armor.element = createTestElement() #create armor element
+    testPlayer.pet = createTestPet() #create player's pet
+    testPlayer.aura = createTestAura() #create player's aura
+
+
     print("What level would you like to be?")
     desiredLevel = int(input())
     #Run level/hp calculation
@@ -38,9 +44,7 @@ def createTestPlayer():
         testPlayer.currentXp = testPlayer.goalXp - 1
         print("You are now close to leveling...")
     #player weapon selection
-    print("Weapon?\n1.Great Axe\n2.Great Sword\n3.Great Spear")
-    testPlayer.weapon = createTestweapon()
-    testPlayer.monsters = createTestPet()
+    testPlayer.weapon = createTestweapon() #Creating test weapon
     return testPlayer
 
     #print("Skipping Aura...")
@@ -48,16 +52,20 @@ def createTestPlayer():
 
 #Creating dev test weapons
 def createTestweapon():
+    print("Weapon?\n1.Great Axe\n2.Great Sword\n3.Great Spear")
     weaponchoice = input()
     #(name, type, damage, element)
     if weaponchoice == "1":
         weapon = PlayerClass.Weapon("Great Axe", "Axe", 10, "none")
-        return weapon   
+        weapon.element = createTestElement()
+        return weapon
     if weaponchoice == "2":
-        weapon = PlayerClass.Weapon("Great Sword", "Sword", 10, "none") 
+        weapon = PlayerClass.Weapon("Great Sword", "Sword", 10, "none")
+        weapon.element = createTestElement() 
         return weapon
     if weaponchoice == "3":
         weapon = PlayerClass.Weapon("Great Spear", "Spear", 10, "none")
+        weapon.element = createTestElement()
         return weapon
 
 
@@ -65,6 +73,23 @@ def createTestweapon():
 def createTestPet():
     testPet = PlayerClass.Pet("Bee", "Small", None, 30, 30, 4)
     return testPet
+
+#creating a test Aura for attribute modication testing
+def createTestAura():
+    testAura = PlayerClass.Aura("Demonic Visage", 5, 0)
+    return testAura
+    #Need to add this to player.CheckBonuses()
+
+
+#creating test armor for attribute modification testing
+def createTestArmor():
+    testArmor = PlayerClass.Armor("Ogre Hide Armor", 3, None)
+    return testArmor
+
+
+def createTestElement():
+    testElement = PlayerClass.Element("Minor Element", "Divine", 4, 4)
+    return testElement
 
 
 

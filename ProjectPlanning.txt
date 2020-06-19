@@ -25,8 +25,9 @@ BEAST TYPES AND SIZES:
         3. Large
         4. Colossus
 
-ELEMENTS:
-    1. DUNNO
+ELEMENTS (JUST 2 FOR TESTING):
+    1. Minor
+    2. Major
 
 CRAFTING:
     GEAR ENCHANTS IN FUTURE:
