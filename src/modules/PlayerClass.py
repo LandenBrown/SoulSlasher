@@ -1,6 +1,6 @@
 import time
 class Player:
-    def __init__(self, name, hp, baseMaxHp, maxHp, weapon, armor, aura, monsters, inventory, currentXp, goalXp, area, level):
+    def __init__(self, name, hp, baseMaxHp, maxHp, weapon, armor, aura, pet, inventory, currentXp, goalXp, area, level):
         self.name = name
         self.hp = hp
         self.maxHp = maxHp
@@ -8,7 +8,7 @@ class Player:
         self.weapon = weapon
         self.armor = armor
         self.aura = aura
-        self.monsters = monsters
+        self.pet = pet
         self.inventory = inventory
         self.currentXp = currentXp
         self.goalXp = goalXp
@@ -35,12 +35,17 @@ class Player:
             self.currentXp = 0
             self.checkBonuses()
 
+    def attack(self, target):
+        print("You are attacking!")
+        target.hp = target.hp - self.weapon.damage
+        print(self.name + " did " + str(self.weapon.damage) + " damage!")
+
 
         #level -> HP calculation 
         #level -> goalXP calculation
 
 class Monster:
-    def __init__(self, name, size, element, hp, xpReward, level, dropTable):
+    def __init__(self, name, size, element, hp, xpReward, level, dropTable, damage):
         self.name = name
         self.size = size
         self.element = element
@@ -48,6 +53,11 @@ class Monster:
         self.xpReward = xpReward
         self.level = level
         self.dropTable = dropTable
+        self.damage = damage
+    def attack(self, target):
+        print(self.name + " is attacking!")
+        target.hp = target.hp - self.damage
+        print(self.name + " did " + str(self.damage) + " damage!")
 
 class Weapon:
     def __init__(self, name, weaponType, damage, element):
@@ -75,12 +85,17 @@ class Element:
         self.elementType = elementType    
 
 class Pet:
-    def __init__(self, name, size, element, hp, maxHp):
+    def __init__(self, name, size, element, hp, maxHp, damage):
         self.name = name
         self.size = size
         self.element = element 
         self.hp = hp
         self.maxHp = maxHp
+        self.damage = damage
+    def attack(self, target):
+        print("Pet " + self.name + " is attacking!")
+        target.hp = target.hp - self.damage
+        print("Pet " + self.name + " did " + str(self.damage) + " damage!")
 
 
 class Loot_Item:

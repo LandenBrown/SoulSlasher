@@ -63,7 +63,7 @@ def createTestweapon():
 
 #Generate test pet for combat sequencing
 def createTestPet():
-    testPet = PlayerClass.Pet("Bee", "Small", None, 30, 30)
+    testPet = PlayerClass.Pet("Bee", "Small", None, 30, 30, 4)
     return testPet
 
 
