@@ -19,7 +19,7 @@ def createTestMonster():
     elif monsterChoice == "4":
         monster = PlayerClass.Monster("Golem", "Collosus", "None", 100, 35, 1)
         return monster
-
+#test
 #Creating a dev test player
 def createTestPlayer():
     testPlayer = PlayerClass.Player("test", 10, 10, 10, None, None, None, None, None, 0, 10, None, 1)
