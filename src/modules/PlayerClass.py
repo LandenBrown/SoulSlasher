@@ -74,11 +74,22 @@ class Element:
         self.name = name 
         self.elementType = elementType    
 
+class Pet:
+    def __init__(self, name, size, element, hp, maxHp):
+        self.name = name
+        self.size = size
+        self.element = element 
+        self.hp = hp
+        self.maxHp = maxHp
+
+
 class Loot_Item:
-    def __init__(self, name, lootType, price)
+    def __init__(self, name, lootType, price):
         self.name = name
         self.lootType = lootType
         self.price = price
+
+
         
     
     

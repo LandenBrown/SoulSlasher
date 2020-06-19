@@ -23,6 +23,7 @@ def TestBattleSequence():
     print("HP: "+str(testPlayer.hp)+"/"+str(testPlayer.maxHp))
     print("Weapon: "+testPlayer.weapon.name+" / Damage: "+str(testPlayer.weapon.damage))
     print("Experience: " +str(testPlayer.currentXp)+"/"+str(testPlayer.goalXp))
+    print("Current Pet: "+testPlayer.monsters.name)
 
     
 

@@ -8,16 +8,16 @@ def createTestMonster():
     print("Would you like to create a \n1.Wolf\n2.Salamander\n3.Ogre\n4.Golem")
     monsterChoice = input()
     if monsterChoice == "1":
-        monster = PlayerClass.Monster("Wolf", "Small", "None", 10, 5, 1)
+        monster = PlayerClass.Monster("Wolf", "Small", "None", 10, 5, 1, None)
         return monster
     elif monsterChoice == "2":
-        monster = PlayerClass.Monster("Salamander", "Medium", "None", 30, 10, 1)
+        monster = PlayerClass.Monster("Salamander", "Medium", "None", 30, 10, 1, None)
         return monster
     elif monsterChoice == "3":
-        monster = PlayerClass.Monster("Ogre", "Large", "None", 50, 20, 1)
+        monster = PlayerClass.Monster("Ogre", "Large", "None", 50, 20, 1, None)
         return monster
     elif monsterChoice == "4":
-        monster = PlayerClass.Monster("Golem", "Collosus", "None", 100, 35, 1)
+        monster = PlayerClass.Monster("Golem", "Collosus", "None", 100, 35, 1, None)
         return monster
 #test
 #Creating a dev test player
@@ -40,7 +40,9 @@ def createTestPlayer():
     #player weapon selection
     print("Weapon?\n1.Great Axe\n2.Great Sword\n3.Great Spear")
     testPlayer.weapon = createTestweapon()
+    testPlayer.monsters = createTestPet()
     return testPlayer
+
     #print("Skipping Aura...")
     
 
@@ -49,14 +51,20 @@ def createTestweapon():
     weaponchoice = input()
     #(name, type, damage, element)
     if weaponchoice == "1":
-        weapon = PlayerClass.Weapon("Great Axe", "Axe", 10, "none", None)
+        weapon = PlayerClass.Weapon("Great Axe", "Axe", 10, "none")
         return weapon   
     if weaponchoice == "2":
-        weapon = PlayerClass.Weapon("Great Sword", "Sword", 10, "none", None) 
+        weapon = PlayerClass.Weapon("Great Sword", "Sword", 10, "none") 
         return weapon
     if weaponchoice == "3":
-        weapon = PlayerClass.Weapon("Great Spear", "Spear", 10, "none", None)
+        weapon = PlayerClass.Weapon("Great Spear", "Spear", 10, "none")
         return weapon
+
+
+#Generate test pet for combat sequencing
+def createTestPet():
+    testPet = PlayerClass.Pet("Bee", "Small", None, 30, 30)
+    return testPet
 
 
 
