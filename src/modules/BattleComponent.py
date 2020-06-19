@@ -9,10 +9,40 @@ def startBattle(player, pet, monster):
     #ccreate battle choices based off weapon type
     #create monster specific attacks and randomize use and outcome
     while player.hp > 0:
-        print("What would you like to do?")
+        print("Player: " + str(player.hp) + "/" + str(player.maxHp))
+        print("Monster: " + str(monster.hp) + "/" + str(monster.maxHp))
         #create monster.attack(target) - DONE
         #create player.attack(target) - DONE
         #create player.pet.attack(target) - DONE
+        print("press 1 to attack")
+        attackChoice = input()
+        if attackChoice == "1":
+            player.attack(monster)
+
+        #ensure player didn't kill monster
+        if monster.hp > 0:
+            print("The monster is now attacking!")
+            monster.attack(player)
+            #check to see if monster killed player
+            if player.hp < 0:
+                print("You have died!")
+                break
+        else:
+            print("You have killed the monster!")
+            break
+        #check to ensure pet isn't dead
+        if pet.hp > 0:
+            print("Your pet is attacking!")
+            pet.attack(monster)
+            #check to see if pet killed monster
+            if monster.hp < 0:
+                print("Your pet has killed the monster")
+                break
+        else:
+            print("Your pet is dead and cannot attack!")
+
+
+
 
 
 def TestBattleSequence():

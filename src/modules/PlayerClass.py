@@ -45,11 +45,12 @@ class Player:
         #level -> goalXP calculation
 
 class Monster:
-    def __init__(self, name, size, element, hp, xpReward, level, dropTable, damage):
+    def __init__(self, name, size, element, hp, maxHp, xpReward, level, dropTable, damage):
         self.name = name
         self.size = size
         self.element = element
         self.hp = hp
+        self.maxHp = maxHp
         self.xpReward = xpReward
         self.level = level
         self.dropTable = dropTable
