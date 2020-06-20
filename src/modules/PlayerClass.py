@@ -22,14 +22,14 @@ class Player:
         #the values in here are placeholders and this function will 100% fail if ran in current state. DO NOT USE YET.
         #Need to check bonuses of crafted elements on the armor
         armorBonus = self.armor.checkBonuses()
-        print("ARMOR BONUS: " + str(armorBonus))
+        #print("ARMOR BONUS: " + str(armorBonus))
         auraBonus = self.aura.hpBonus
-        print("AURA BONUS: " + str(auraBonus))
+        #print("AURA BONUS: " + str(auraBonus))
         addedBonuses = armorBonus + auraBonus
-        print("ADDED BONUSES: " + str(addedBonuses))
-        time.sleep(0.5)
+        #print("ADDED BONUSES: " + str(addedBonuses))
+        #time.sleep(0.5)
         self.maxHp = self.baseMaxHp + addedBonuses #Calculating all bonuses
-        print("MaxHP: " + str(self.maxHp) + " / baseMaxHP" + str(self.baseMaxHp))
+        #print("MaxHP: " + str(self.maxHp) + " / baseMaxHP" + str(self.baseMaxHp))
         #DONT NEED THE BELOW, LOGIC WAS CAUSING THE LEVEL CHECK TO INCREASE THE HEALTH WITH BONUSES INCLUDED (10+4+4)*1.35
         #self.maxHp = self.baseMaxHp #Setting maxHp to our total health+Bonus value (baseMaxHp)
         #healing health back to full after check
@@ -38,15 +38,15 @@ class Player:
 
     #should work for all levels, no need to draw it out for each level. This means that there is no level cap
     def levelCheck(self):
-        print("Starting level check...")
-        time.sleep(0.1)
+        #print("Starting level check...")
+        #time.sleep(0.1)
         if self.currentXp >= self.goalXp:
             self.goalXp = int(self.goalXp*1.15)
-            print("current base hp: " + str(self.baseMaxHp))
-            time.sleep(.5)
+            #print("current base hp: " + str(self.baseMaxHp))
+            #time.sleep(.5)
             self.baseMaxHp = int(self.baseMaxHp*1.35)
-            print("new base hp: " + str(self.baseMaxHp))
-            time.sleep(.5)
+            #print("new base hp: " + str(self.baseMaxHp))
+            #time.sleep(.5)
             self.level += 1
             self.currentXp = 0
             self.checkBonuses()
@@ -62,7 +62,7 @@ class Player:
 
 #####
 class Monster:
-    def __init__(self, name, size, element, hp, maxHp, xpReward, level, dropTable, damage):
+    def __init__(self, name, size, element, hp, maxHp, xpReward, level, dropTable, damage, monsterType):
         self.name = name
         self.size = size
         self.element = element
@@ -72,6 +72,7 @@ class Monster:
         self.level = level
         self.dropTable = dropTable
         self.damage = damage
+        self.monsterType = monsterType
     def attack(self, target):
         print(self.name + " is attacking!")
         target.hp = target.hp - self.damage
@@ -135,6 +136,13 @@ class Loot_Item:
         self.lootType = lootType
         self.price = price
 
+class Area:
+    def __init__(self, name, previousArea, nextArea, forge, shop):
+        self.name = name
+        self.previousArea = previousArea
+        self.nextArea = nextArea
+        self.forge = forge
+        self.shop = shop
 
         
     

@@ -1,24 +1,61 @@
 #This is where we will create the object creation for use
 # ALOT of our customization and procedural generation work will be done here
 # Importing required class modules - it's important we always only import WHAT WE NEED.
-import PlayerClass #<-- This will need to be changed to the multiple modules that we separate out.
+from modules import PlayerClass #<-- This will need to be changed to the multiple modules that we separate out.
 #<-- importing Player class
 #Test monster creation - rough dev testing only - to be used in BattleComponent.py
+import time
+#### Drop Tables
+#Flesh
+fleshDrops = ["Hide", "Fur", "Scale", "Bone", "Claw"]
+#Sea
+seaDrops = ["Shell", "Bone", "Fin", "Scale"]
+#Brute
+bruteDrops = ["Strong Hide", "Large Scale", "Large Bone", "Sharp Claw"]
+#Metal
+metalDrops = ["Iron", "Steel", "Damascus"]
+
+
+###### AREAS ######
+testArea1 = PlayerClass.Area("Test Area 1", None, None, None, None)
+testArea2 = PlayerClass.Area("Test Area 2", None, None, None, None)
+testArea3 = PlayerClass.Area("Test Area 3", None, None, None, None)
+
+def area_Initialization_Script():
+    print("nothing yet")
+    #Area 1
+    testArea1.nextArea = testArea2
+    #Area 2
+    testArea2.previousArea = testArea1
+    testArea2.previousArea = testArea2
+    #Area 3
+    testArea3.previousArea = testArea2
+
+def selectMonsterTypeDropTable(targetMonster):
+    if targetMonster.monsterType == "Flesh":
+        return fleshDrops
+    elif targetMonster.monsterType == "Sea":
+        return seaDrops
+    elif targetMonster.monsterType == "Brute":
+        return bruteDrops
+    elif targetMonster.monsterType == "Metal":
+        return metalDrops
+
+
 def createTestMonster():
     print("Would you like to create a \n1.Wolf\n2.Salamander\n3.Ogre\n4.Golem")
     monsterChoice = input()
     if monsterChoice == "1":
-        monster = PlayerClass.Monster("Wolf", "Small", "None", 10, 10, 5, 1, None, 1)
-        return monster
+        monster = PlayerClass.Monster("Wolf", "Small", "None", 10, 10, 5, 1, None, 1, "Flesh")
     elif monsterChoice == "2":
-        monster = PlayerClass.Monster("Salamander", "Medium", "None", 30, 30, 10, 1, None, 3)
-        return monster
+        monster = PlayerClass.Monster("Salamander", "Medium", "None", 30, 30, 10, 1, None, 3, "Sea")
     elif monsterChoice == "3":
-        monster = PlayerClass.Monster("Ogre", "Large", "None", 50, 50, 20, 1, None, 5)
-        return monster
+        monster = PlayerClass.Monster("Ogre", "Large", "None", 50, 50, 20, 1, None, 5, "Brute")
     elif monsterChoice == "4":
-        monster = PlayerClass.Monster("Golem", "Collosus", "None", 100, 100, 35, 1, None, 9)
-        return monster
+        monster = PlayerClass.Monster("Golem", "Collosus", "None", 100, 100, 35, 1, None, 9, "Metal")
+    
+    monster.dropTable = selectMonsterTypeDropTable(monster)
+    return monster
 #test
 #Creating a dev test player
 def createTestPlayer():
@@ -90,6 +127,9 @@ def createTestArmor():
 def createTestElement():
     testElement = PlayerClass.Element("Minor Element", "Divine", 4, 4)
     return testElement
+
+
+####Crafting Recipes#####
 
 
 

@@ -1,23 +1,25 @@
-from modules import CraftComponent, BattleComponent, ShopComponent
-
+from modules import BattleComponent, CraftComponent, ShopComponent
 
 #Variable Declaration
 startGame = ""
 
 #Main Engine function
 def MainEngine():
+
     engineResponse = ""
-    while engineResponse != "4":
+    while engineResponse != "5":
         print("Current Area: player.area / Level: player.level\n")
         print("What would you like to do?")
-        print("1.Test Battle\n2.Test Craft\n3.Test Shop\n4.Exit to Main Menu")
+        print("1.Test Battle\n2.Test Craft\n3.Test Shop\n4.Travel\n5.Exit to Main Menu")
         engineResponse = input()
         if engineResponse =="1":
-            BattleComponent.BattleMenu()
+            BattleComponent.TestBattleSequence()
         elif engineResponse == "2":
             CraftComponent.CraftMenu()
         elif engineResponse == "3":
             ShopComponent.ShopMenu()
+        elif engineResponse == "4":
+            print("something idk..")
 def startMenu():
     global startGame
     print("Please select an option")
